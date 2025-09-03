@@ -5,7 +5,7 @@ It focuses specifically on the **state-based Push-T test environment**, refactor
 
 ---
 
-## ✨ Features
+## Features
 - **Environment**  
   Lightweight Push-T–style 2D block-pushing env built with `gymnasium`, `pygame`, and `pymunk`.
 - **Dataset Loader**  
