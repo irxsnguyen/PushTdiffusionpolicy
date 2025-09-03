@@ -29,7 +29,7 @@ It focuses specifically on the **state-based Push-T test environment**, refactor
 
 ## 🔧 Installation
 ```bash
-git clone https://github.com/your-username/StateDiffusionPolicy.git
-cd StateDiffusionPolicy
+git clone https://github.com/irxsnguyen/PushTdiffusionpolicy.git
+cd PushTdiffusionpolicy
 python -m venv .venv && source .venv/bin/activate  # optional
 pip install -r requirements.txt
