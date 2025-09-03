@@ -1,37 +1,35 @@
 # Push-T Diffusion Policy
 
-This repository demonstrates **diffusion-based imitation learning** in the [Push-T environment](https://github.com/...), combining a physics-based simulator (PyMunk + Gymnasium) with diffusion models for long-horizon action prediction. It includes dataset preprocessing, training, evaluation, and inference pipelines.
+This project is a **modernized and simplified adaptation** of the [Stanford Diffusion Policy repository](https://github.com/real-stanford/diffusion-policy).  
+It focuses specifically on the **state-based Push-T test environment**, refactored into a clean, standalone repo with updated dependencies and training scripts.
 
 ---
 
 ## ✨ Features
-- **Push-T Environment**  
-  A 2D block pushing environment built with `pymunk`, `pygame`, and `gymnasium`.
+- **Environment**  
+  Lightweight Push-T–style 2D block-pushing env built with `gymnasium`, `pygame`, and `pymunk`.
 - **Dataset Loader**  
-  - Loads demonstrations stored in `.zarr` format.  
-  - Normalizes states & actions to `[-1, 1]`.  
-  - Generates padded trajectories for training.  
+  - Reads demonstrations stored in Zarr format.  
+  - Normalizes states and actions to `[-1, 1]`.  
+  - Generates padded trajectories for configurable horizons.  
 - **Diffusion Policy**  
-  - Conditional 1D UNet predicts noise over action sequences.  
+  - Conditional 1D UNet over action sequences.  
+  - Conditioning on stacked states (state-based policy).  
   - Training with DDPM + cosine noise schedule.  
-  - EMA model weights for stable evaluation.  
+  - Exponential Moving Average (EMA) weights for stable inference.  
 - **Training Pipeline**  
-  - Batched dataloaders with PyTorch.  
-  - Cosine LR scheduler with warmup.  
-  - Exponential Moving Average (EMA) for model stability.  
+  - PyTorch-based loop with AdamW optimizer.  
+  - Cosine LR schedule with warmup.  
+  - tqdm progress bars for easy monitoring.  
 - **Inference**  
-  - Rollout in the Push-T environment with diffusion denoising.  
-  - Video logging & evaluation of target coverage.
+  - Rollout in the Push-T environment with denoised action sequences.  
+  - Video logging (`vis.mp4`) and reward tracking.
 
 ---
 
-## 🛠️ Installation
-
-Clone the repo and install dependencies:
-
+## 🔧 Installation
 ```bash
-git clone https://github.com/your-username/pusht-diffusion-policy.git
-cd pusht-diffusion-policy
-
-# Python 3.8+ recommended
+git clone https://github.com/your-username/StateDiffusionPolicy.git
+cd StateDiffusionPolicy
+python -m venv .venv && source .venv/bin/activate  # optional
 pip install -r requirements.txt
