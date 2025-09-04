@@ -1,6 +1,6 @@
 # Push-T Diffusion Policy
 
-This project is a modernized and simplified adaptation of the [Stanford Diffusion Policy repository](https://github.com/real-stanford/diffusion-policy).  
+This project is a modernized and simplified adaptation of the [Stanford Diffusion Policy repository](https://github.com/real-stanford/diffusion_policy).  
 It focuses specifically on the state-based Push-T test environment, refactored into a clean, standalone repo with updated dependencies and training scripts. Works with Colab T4 GPU.
 Check out Colab link here: https://colab.research.google.com/drive/1_eSgu5KeTjcSD96t5HSsUZQYxuqt7Q5U?usp=sharing
 
